@@ -37,4 +37,7 @@ i2c_close(void) {
 	i2c_fd = -1;
 }
 
-/* End i2c_common.c */
+/*********************************************************************
+ * End i2c_common.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

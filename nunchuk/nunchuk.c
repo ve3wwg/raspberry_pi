@@ -428,4 +428,7 @@ main(int argc,char **argv) {
 	return 0;
 }
 
-/* End nunchuk.c */
+/*********************************************************************
+ * End nunchuk.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

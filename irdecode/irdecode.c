@@ -402,4 +402,7 @@ xit:	fputs("\nExit.\n",stdout);
 	return 0;
 }
 
-/* End irdecode.c */
+/*********************************************************************
+ * End irdecode.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

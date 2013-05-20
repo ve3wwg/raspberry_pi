@@ -1,3 +1,7 @@
+######################################################################
+#  Assimilating the Raspberry Pi, by Warren Gay VE3WWG
+######################################################################
+
 CC	= gcc
 INCL	= -I/usr/local/include
 OPTS	= -Wall
@@ -27,4 +31,6 @@ clean:
 clobber: clean
 	rm -f sensor console mac_console
 
-# End
+######################################################################
+#  End Makefile.  Public Domain license.
+######################################################################

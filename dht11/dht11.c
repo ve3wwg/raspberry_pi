@@ -161,4 +161,7 @@ main(int argc,char **argv) {
 	return 0;
 }
 
-/* End dht11.c */
+/*********************************************************************
+ * End dht11.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

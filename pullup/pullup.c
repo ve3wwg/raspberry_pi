@@ -73,4 +73,7 @@ errxit: fprintf(stderr,"Argument '%s' must be in the form\n"
         return 1;
 }
 
-/* End pullup.c */
+/*********************************************************************
+ * End pullup.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

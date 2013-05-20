@@ -19,4 +19,7 @@ timed_wait(long sec,long usec,long early_usec) {
     } while ( rc < 0 && timeout.tv_sec && timeout.tv_usec );
 }
 
-/* End timed_wait.c */
+/*********************************************************************
+ * End timed_wait.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

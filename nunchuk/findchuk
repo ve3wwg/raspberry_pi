@@ -34,4 +34,7 @@ find . -type d -name 'input[0-9]*' | (
 	exit 1
 )
 
-# End findchuk
+######################################################################
+# End fundchuk - Assimilating the Raspberry Pi, by Warren Gay
+# This source code is placed into the public domain.
+######################################################################

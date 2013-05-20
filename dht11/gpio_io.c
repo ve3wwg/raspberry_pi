@@ -92,4 +92,8 @@ gpio_read(int gpio) {
     return (GPIO_GET) & sel ? 1 : 0;
 }
 
-/* End gpio_io.c */
+/*********************************************************************
+ * End gpio_io.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/
+

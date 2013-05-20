@@ -190,4 +190,7 @@ bad_date:	printf("Argument '%s' is not a valid calendar date.\n",argv[1]);
 	return rc == 1 ? 0 : 4;
 }
 
-/* End ds1397set.c */
+/*********************************************************************
+ * End ds1307set.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

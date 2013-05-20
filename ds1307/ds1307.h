@@ -38,4 +38,8 @@ typedef struct {
 	unsigned char	outbit	 : 1;	/* OUT */
 } ds1307_rtc_regs;
 
-/* End ds1307.h */
+/*********************************************************************
+ * End ds1307.h - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/
+   

@@ -1,0 +1,26 @@
+This is the software for the book:
+
+	Assimilating the Raspberry Pi
+
+The current snapshot of the git repository is available by executing
+the command:
+
+$ git clone git@github.com:ve3wwg/raspberry_pi.git
+
+The source code will be deposited into the subdirectory ./raspberry_pi
+
+On the Raspberry Pi, simply CD to this directory and type:
+
+$ make
+
+Or you may cd into any project subdirectory and type make:
+
+$ cd ./bipolar
+$ make
+
+If you make changes to the source code and you want to rebuild 
+completely from scratch, you can use:
+
+$ make clobber all
+
+Enjoy.

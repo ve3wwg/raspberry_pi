@@ -167,4 +167,7 @@ usage:		fprintf(stderr,"Usage: %s <gpio_in_pin>\n",argv[0]);
 	return 0;
 }
 
-/* End evinput.c */
+/*********************************************************************
+ * End evinput.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

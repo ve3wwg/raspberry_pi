@@ -1,3 +1,7 @@
+######################################################################
+#  Assimilating the Raspberry Pi, by Warren Gay VE3WWG
+######################################################################
+
 PROJECTS = dht11 libusb pullup rtscts valt evinput mcp23017 nunchuk irdecode \
 	pads unipolar ds1307 sensor bipolar pwm
 
@@ -23,3 +27,7 @@ tar:	clobber
 	@rm -fr /tmp/rasp-$$(date '+%Y-%m-%d')
 	@rm -f /tmp/rasp-$$(date '+%Y-%m-%d').tar.gz
 	ls -l rasp-$(TSTAMP).tar.gz
+
+######################################################################
+#  Public Domain source code.
+######################################################################

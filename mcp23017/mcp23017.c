@@ -205,4 +205,7 @@ main(int argc,char **argv) {
 	return 0;
 }
 
-/* End mcp23017.c */
+/*********************************************************************
+ * End mcp23017.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

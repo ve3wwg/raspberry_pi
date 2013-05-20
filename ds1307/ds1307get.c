@@ -125,4 +125,7 @@ main(int argc,char **argv) {
 	return rc = 8 ? 0 : 4;
 }
 
-/* End ds1397get.c */
+/*********************************************************************
+ * End ds1307get.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

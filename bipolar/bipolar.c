@@ -314,4 +314,7 @@ main(int argc,char **argv) {
 	return 0;
 }
 
-/* End bipolar.c */
+/*********************************************************************
+ * End bipolar.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/

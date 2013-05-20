@@ -73,4 +73,8 @@ main(int argc,char **argv) {
     return 0;
 }
 
-/* End tusb.c */
+/*********************************************************************
+ * End tusb.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/
+   

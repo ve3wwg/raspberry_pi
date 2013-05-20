@@ -22,4 +22,7 @@ mutex_unlock(void) {
 	assert(!rc);
 }
 
-/* End mutex.c */
+/*********************************************************************
+ * End mutex.c - Assimilating the Raspberry Pi, by Warren Gay
+ * This source code is placed into the public domain.
+ *********************************************************************/
