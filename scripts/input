@@ -1,0 +1,54 @@
+#!/bin/bash
+
+ALO="${1:-0}" # 1=active low, else 0
+INP=25        # Read from GPIO 25 (GEN6)
+OUT=24        # Write to GPIO 24 (GEN5)
+
+set -eu
+trap "close_all" 0
+
+function close_all() {
+  close $INP
+  close $OUT
+}
+function open() { # pin direction
+  dev=$SYS/gpio$1
+  if [ ! -d $dev ] ; then
+    echo $1 >$SYS/export 
+  fi
+  echo $2 >$dev/direction
+  echo none >$dev/edge
+  echo $ALO >$dev/active_low
+}
+function close() { # pin
+  echo $1 >$SYS/unexport
+}
+function put() { # pin value
+  echo $2 >$SYS/gpio$1/value
+}
+function get() { # pin
+  read BIT <$SYS/gpio$1/value
+  echo $BIT
+}
+
+count=0
+SYS=/sys/class/gpio
+
+open $INP in
+open $OUT out
+put $OUT 1
+LBIT=2
+
+while true ; do
+  RBIT=$(get $INP)
+  if [ $RBIT -ne $LBIT ] ; then
+    put $OUT $RBIT
+    printf "%04d Status: %d\n" $count $RBIT
+    LBIT=$RBIT
+    let count=count+1
+  else
+    sleep 1
+  fi
+done
+
+# End

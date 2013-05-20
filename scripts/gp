@@ -1,0 +1,30 @@
+#!/bin/bash
+
+GPIO="$1"
+SYS=/sys/class/gpio
+DEV=/sys/class/gpio/gpio$GPIO
+
+if [ ! -d $DEV ] ; then
+	# Make pin visible
+	echo $GPIO >$SYS/export	
+fi
+
+# Set pin to output
+echo out >$DEV/direction
+
+function put() {
+	# Set value of pin (1 or 0)
+	echo $1 >$DEV/value
+}
+
+# Main loop:
+while true ; do
+	put 1
+	echo "GPIO $GPIO: on"
+	sleep 1
+	put 0
+	echo "GPIO $GPIO: off  $(date)"
+	sleep 1
+done
+
+# End

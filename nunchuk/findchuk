@@ -1,0 +1,37 @@
+#!/bin/bash
+######################################################################
+#  Find the Nunchuck 
+######################################################################
+#
+# This script locates the Nunchuk uinput device by searching the
+# /sys/devices/virtual/input pseudo directory for names of the form:
+# input[0-9]*. For all subdirectories found, check the ./name pseudo
+# file, which will contain "nunchuk". Then we derive the /dev path
+# from a sibling entry named event[0-9]*. That will tell use the
+# /dev/input/event%d pathname, for the Nunchuk.
+
+DIR=/sys/devices/virtual/input	# Top level directory
+set -eu
+
+cd "$DIR"
+find . -type d -name 'input[0-9]*' | (
+	set -eu
+	while read dirname ; do
+		cd "$DIR/$dirname"
+		if [ -f "name" ] ; then
+			set +e
+			name=$(cat name)
+			set -e
+			if [ $(cat name) = nunchuk ] ; then
+				event="/dev/input/$(ls -d event[0-9]*)"
+				echo $event
+				exit 0		# Found it
+			fi
+		fi
+	done
+
+	echo "Nunchuk uinput device not found." >&2
+	exit 1
+)
+
+# End findchuk
