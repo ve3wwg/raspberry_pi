@@ -20,7 +20,7 @@
 static const int steps_per_360 = 100;	/* Full steps per rotation */
 
 /*                GPIO Pins:  A   B   C   D */
-static const int gpios[] = { 17, 27, 22, 23 };
+static const int gpios[] = { 17, 24, 22, 23 };
 
 static float step_time = 0.1;		/* Seconds */
 static int drive_mode = 0;		/* Drive mode 0, 1, or 2 */
