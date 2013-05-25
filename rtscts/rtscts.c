@@ -15,6 +15,7 @@
 
 static inline void
 gpio_setalt(int gpio,unsigned alt) {
+	INP_GPIO(gpio);
 	SET_GPIO_ALT(gpio,alt);
 }
 
