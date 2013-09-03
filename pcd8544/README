@@ -1,0 +1,44 @@
+README: pcd8544
+---------------
+
+This project is not provided in the book, but is made available here
+in the event that the experimenter might find it useful. The PCD8544
+LCD controller chip is used in small LCD displays like the notable
+Nokia 5110 display, applied to Arduino/AVR class MCUs.
+
+Many folks wire these up using SPI, though there is no real reason
+that you must. The PCD8544 is a bit of a nuisance on SPI because of
+the additional required Data/Command status line. The PCD8544
+operates at clock rates up to 4 MHz, and uses a 3 volt interface.
+These factors make it real easy to use on the Raspberry Pi, using
+simple GPIO connections (saving SPI for other more critical tasks).
+
+The software provided here uses "bit-banging" to drive the LCD
+display. This works well because the timing is non-critical and
+the controller will wait for the RPi, should it get temporarily
+busy with something else.
+
+The software provided here provides a "text" interface to the LCD,
+rather than a graphics one. The software can be adapted to graphics,
+but this has not been done in this project. The library provides
+the following C routines for application use:
+
+    void lcd_init(int vop);                     /* Initialize PCD8544 */
+    void lcd_home(void);                        /* Home cursor */
+    void lcd_sety(int y);                       /* Move to line 0-5 */
+    void lcd_setx(int x);                       /* Move to col 0-13 */
+    void lcd_move(int y,int x);                 /* Move to y,x */
+    void lcd_clear(void);                       /* Clear screen & home cursor */
+    void lcd_clrtobot(void);                    /* Clear from position to end screen */
+    void lcd_clrtoeol(void);                    /* Clear from position to end of line */
+    void lcd_printf(const char *format,...);    /* Format and display message */
+
+    int lcd_getx();                             /* Return current X position */
+    int lcd_gety();                             /* Return current Y position */
+    char lcd_char();                            /* Return current char at position */
+
+See the book "Assimilating the Raspberry Pi" for more details about
+the other aspects of this source code (like the GPIO routines).
+
+--
+http://www.lulu.com/shop/warren-gay/assimilating-the-raspberry-pi/hardcover/product-21090756.html
