@@ -469,27 +469,24 @@ lcd_clear(void) {
  *********************************************************************/
 void
 lcd_clrtobot(void) {
-	int lines = lcd_lines - 1 - lcd_y;
-	int cols = lcd_cols - lcd_x;
-	int cells = lines * lcd_cols + cols;
-	int y, x;
+	int y, x, z, start_x;
 
-	/* Clear device data */
-	if ( cells > 0 ) {
-		lcd_move(lcd_y,lcd_x);
-		lcd(LCD_Data);
-		for ( ; cells > 0; --cells ) 
-			for ( x=0; x<6; ++x )
+	lcd_move(lcd_y,lcd_x);
+
+	lcd(LCD_Data);
+
+	start_x = lcd_x;
+	for ( y=lcd_y; y<lcd_lines; ++y ) {
+		for ( x=start_x; x<lcd_cols; ++x ) {
+			for ( z=0; z<6; ++z )
 				lcd_wr_byte(0x00);
-		lcd(LCD_Unselect);
+		}
+		lcd_buf[y][x] = ' ';
+		start_x = 0;
 	}
 
-	/* Clear buffer data */
-	for ( y=lcd_y; y < lcd_lines; ++y )
-		for ( x=lcd_x; x < lcd_cols; ++x )
-			lcd_buf[y][x] = ' ';
+	lcd(LCD_Unselect);
 
-	/* Restore cursor */
 	lcd_restore();
 }
 
@@ -498,23 +495,15 @@ lcd_clrtobot(void) {
  *********************************************************************/
 void
 lcd_clrtoeol(void) {
-	int cells = lcd_cols - lcd_x;
-	int x;
+	int x, z;
 
-	/* Clear device data */
-	if ( cells > 0 ) {
-		lcd(LCD_Data);
-		for ( ; cells > 0; --cells ) 
-			for ( x=0; x<6; ++x )
-				lcd_wr_byte(0x00);
-		lcd(LCD_Unselect);
-	}
-
-	/* Clear buffer data */
-	for ( x=lcd_x; x < lcd_cols; ++x )
+	lcd(LCD_Data);
+	for ( x=lcd_x; x<lcd_cols; ++x ) {
+		for ( z=0; z<6; ++z )
+			lcd_wr_byte(0x00);
 		lcd_buf[lcd_y][x] = ' ';
-
-	/* Restore cursor */
+	}
+	lcd(LCD_Unselect);
 	lcd_restore();
 }
 
@@ -651,6 +640,10 @@ main(int argc,char **argv) {
 			puts("E - Clear to eol.");
 			lcd_clrtoeol();
 			break;
+		case 'S' :
+			puts("S - Clear to end of screen.");
+			lcd_clrtobot();
+			break;
 		case '!' :
 			puts("! - Reset.");
 			lcd_init(0);
@@ -672,14 +665,15 @@ main(int argc,char **argv) {
 		case '?' :
 		case 'H' :
 			puts(	"Menu:\n"
-				"C - Clear & home cursor\n"
+				"C - clear & home cursor\n"
 				"X - putc('X')\n"
 				"M - Multi-line test\n"
 				"U - cursor Up\n"
 				"D - cursor Down\n"
 				"L - cursor Left\n"
 				"R - cursor Right\n"
-				"E - clear to End of line\n"
+				"E - clear to end of line\n"
+				"S - clear to end screen\n"
 				"! - Reset LCD\n"
 				"+ - Reset with increased Vop\n"
 				"- - Reset with decreased Vop\n"
