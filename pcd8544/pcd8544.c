@@ -324,7 +324,7 @@ lcd_putc(char c) {
 		return;
 	}
 
-	if ( lcd_x + 1 >= lcd_cols ) {	/* Past column end? */
+	if ( lcd_x + 1 > lcd_cols ) {	/* Past column end? */
 		if ( ++lcd_y >= lcd_lines ) {
 			lcd_scroll();	/* Scroll if necessary */
 			lcd_y = lcd_lines-1;
