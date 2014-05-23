@@ -1,10 +1,17 @@
-This is the software for the book:
+This is the software that first appeared for the book:
 
   Assimilating the Raspberry Pi
+  
+  which is no longer available.
+  
+This software now applies to the soon to be published by Apress book:
 
-Available at:
+  Mastering the Raspberry Pi  
+  ISBN13: 978-1-484201-82-4
+  User Level: Intermediate to Advanced
+  Publishing August 31, 2014
 
-  http://www.lulu.com/shop/warren-gay/assimilating-the-raspberry-pi/hardcover/product-21090756.html
+  http://www.apress.com/9781484201824
 
 
 The current snapshot of the git repository is available by executing
@@ -27,5 +34,3 @@ If you make changes to the source code and you want to rebuild
 completely from scratch, you can use:
 
   $ make clobber all
-
-Enjoy.
