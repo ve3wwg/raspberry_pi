@@ -97,7 +97,7 @@ rbyte(void) {
  * error.
  */
 static int
-rsensor(int *relhumidity,int *celcius) {
+rsensor(int *relhumidity,int *celsius) {
 	unsigned char u[5], cs = 0, x;
 
 	for ( x=0; x<5; ++x ) {
@@ -108,7 +108,7 @@ rsensor(int *relhumidity,int *celcius) {
 
 	if ( (cs & 0xFF)  == u[4] ) {
 		*relhumidity = (int)u[0];
-		*celcius   = (int)u[2];
+		*celsius   = (int)u[2];
 		return 1;
 	}
 	return 0;
@@ -119,7 +119,7 @@ rsensor(int *relhumidity,int *celcius) {
  */
 int
 main(int argc,char **argv) {
-	int relhumidity = 0, celcius = 0;
+	int relhumidity = 0, celsius = 0;
 	int errors = 0, timeouts = 0, readings = 0;
 	unsigned wait;
 
@@ -148,8 +148,8 @@ main(int argc,char **argv) {
 		wait_until_low();		/* Wait for low signal */
 		wait_until_high();		/* Wait for return to high */
 
-		if ( rsensor(&relhumidity,&celcius) )
-			printf("RH %d%% Temp %d C Reading %d\n",relhumidity,celcius,++readings);
+		if ( rsensor(&relhumidity,&celsius) )
+			printf("RH %d%% Temp %d C Reading %d\n",relhumidity,celsius,++readings);
 		else	fprintf(stderr,"(Error # %d)\n",++errors);
 	}
 
@@ -157,7 +157,7 @@ main(int argc,char **argv) {
 
 	puts("\nProgram exited due to SIGINT:\n");
 	printf("Last Read: RH %d%% Temp %d C, %d errors, %d timeouts, %d readings\n",
-		relhumidity,celcius,errors,timeouts,readings);
+		relhumidity,celsius,errors,timeouts,readings);
 	return 0;
 }
 
