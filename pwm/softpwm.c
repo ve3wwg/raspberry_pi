@@ -139,7 +139,7 @@ main(int argc,char **argv) {
 	if ( argc > 1 ) {
 		/* Run PWM mode */
 		pwm = pwm_open(22,1000.0);	/* GPIO 22 (GEN3) */
-		pwm_ratio(pwm,250,1000);	/* 25%, Start it */
+		pwm_ratio(pwm,n,m);		/* Set ratio n/m */
 
 		printf("PWM set for %d/%d, frequency %.1f (for 60 seconds)\n",n,m,f);
 
@@ -175,6 +175,7 @@ main(int argc,char **argv) {
 }
 
 /*********************************************************************
- * End softpwm.c - Assimilating the Raspberry Pi, by Warren Gay
+ * End softpwm.c
+ * Mastering the Raspberry Pi - ISBN13: 978-1-484201-82-4
  * This source code is placed into the public domain.
  *********************************************************************/
