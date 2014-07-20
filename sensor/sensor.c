@@ -331,6 +331,7 @@ main(int argc,char **argv) {
 }
 
 /*********************************************************************
- * End sensor.c - Assimilating the Raspberry Pi, by Warren Gay
+ * End sensor.c - by Warren Gay
+ * Mastering the Raspberry Pi, ISBN13: 978-1-484201-82-4
  * This source code is placed into the public domain.
  *********************************************************************/

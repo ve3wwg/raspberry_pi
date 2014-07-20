@@ -284,6 +284,7 @@ main(int argc,char **argv) {
 }
 
 /*********************************************************************
- * End valt.c - Assimilating the Raspberry Pi, by Warren Gay
+ * End valt.c - by Warren Gay
+ * Mastering the Raspberry Pi, ISBN13: 978-1-484201-82-4
  * This source code is placed into the public domain.
  *********************************************************************/

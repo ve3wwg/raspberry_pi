@@ -1,6 +1,7 @@
 #!/bin/bash
 ######################################################################
-#  Assimilating the Raspberry Pi, by Warren Gay VE3WWG
+#  Mastering the Raspberry Pi, ISBN13: 978-1-484201-82-4
+#  Warren W. Gay VE3WWG
 ######################################################################
 
 ALO="${1:-0}" # 1=active low, else 0

@@ -37,8 +37,9 @@ the following C routines for application use:
     int lcd_gety();                             /* Return current Y position */
     char lcd_char();                            /* Return current char at position */
 
-See the book "Assimilating the Raspberry Pi" for more details about
-the other aspects of this source code (like the GPIO routines).
+See the book "Mastering the Raspberry Pi", ISBN13: 978-1-484201-82-4 for
+more details about the other aspects of this source code (like the GPIO
+routines).
 
 --
-http://www.lulu.com/shop/warren-gay/assimilating-the-raspberry-pi/hardcover/product-21090756.html
+http://www.apress.com/9781484201824

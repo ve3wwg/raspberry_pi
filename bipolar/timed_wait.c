@@ -20,6 +20,7 @@ timed_wait(long sec,long usec,long early_usec) {
 }
 
 /*********************************************************************
- * End timed_wait.c - Assimilating the Raspberry Pi, by Warren Gay
+ * End timed_wait.c
+ * Mastering the Raspberry Pi - ISBN13: 978-1-484201-82-4
  * This source code is placed into the public domain.
  *********************************************************************/

@@ -697,6 +697,6 @@ main(int argc,char **argv) {
 }
 
 /*********************************************************************
- * End pcd8844.c
+ * End pcd8844.c - by Warren W. Gay VE3WWG
  * This source code is placed into the public domain.
  *********************************************************************/

@@ -1,5 +1,6 @@
 ######################################################################
-#  Assimilating the Raspberry Pi, by Warren Gay VE3WWG
+# Mastering the Raspberry Pi - ISBN13: 978-1-484201-82-4
+# Warren W. Gay VE3WWG
 ######################################################################
 
 CC	= gcc

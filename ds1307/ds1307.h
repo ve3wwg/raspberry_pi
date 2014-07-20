@@ -39,7 +39,8 @@ typedef struct {
 } ds1307_rtc_regs;
 
 /*********************************************************************
- * End ds1307.h - Assimilating the Raspberry Pi, by Warren Gay
+ * End ds1307.h - by Warren Gay
+ * Mastering the Raspberry Pi - ISBN13: 978-1-484201-82-4
  * This source code is placed into the public domain.
  *********************************************************************/
    

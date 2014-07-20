@@ -106,6 +106,7 @@ gpio_poll(int fd) {
 }
 
 /*********************************************************************
- * End sysgpio.c - Assimilating the Raspberry Pi, by Warren Gay
+ * End sysgpio.c - Warren Gay
+ * Mastering the Raspberry Pi - ISBN13: 978-1-484201-82-4
  * This source code is placed into the public domain.
  *********************************************************************/

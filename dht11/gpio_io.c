@@ -93,7 +93,8 @@ gpio_read(int gpio) {
 }
 
 /*********************************************************************
- * End gpio_io.c - Assimilating the Raspberry Pi, by Warren Gay
+ * End gpio_io.c - by Warren Gay
+ * Mastering the Raspberry Pi - ISBN13: 978-1-484201-82-4
  * This source code is placed into the public domain.
  *********************************************************************/
 
